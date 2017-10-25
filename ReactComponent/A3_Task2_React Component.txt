@@ -1,0 +1,101 @@
+const fruits = {
+    Apple: {
+        fruitsimg:"https://loseitapp.files.wordpress.com/2014/09/istock_000014459318_double.jpg",
+        name:"Apple",
+        description:" The phytonutrients and antioxidants in apples may help reduce the risk of developing cancer, hypertension, diabetes, and heart disease.",
+        mrp: 120 
+    },
+    Mango: {
+        fruitsimg:"http://weknowyourdreams.com/images/mango/mango-02.jpg",
+        name:"Mango",
+        description:"Mangoes are nutritionally rich tropical fruits with unique flavor, fragrance,  health  promoting qualities",
+        mrp: 130 
+    },
+   Banana: {
+       fruitsimg:"https://www.organicfacts.net/wp-content/uploads/2013/05/Banana3-1020x765.jpg",
+        name:"Banana",
+        description:"Banana is an botanically a berry,produced by several kinds of large herbaceous  flowering plants in the genus Musa",
+        mrp: 100 
+   },
+   Pomegranate: {
+       fruitsimg:"https://images-na.ssl-images-amazon.com/images/I/51gtrXVe5XL.jpg",
+        name:"Pomegranate",
+        description:"pomegranates (Punica granatum), which are the product of a fruit-bearing deciduous shrub or small tree",
+        mrp: 120 
+   },
+  Orange: {
+        fruitsimg:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Orange-Fruit-Pieces.jpg/220px-Orange-Fruit-Pieces.jpg",
+        name:"Orange",
+        description:"An orange is a type of citrus fruit which people often eat. Oranges are a very good source of vitamins,  especially vitamin C",
+        mrp: 100 
+   },
+}
+
+class App extends React.Component{
+
+displayfruits(){
+    return Object.keys(fruits).map(myfruits => {
+        return (
+            <div>
+                <table>
+                 <tr>
+                   <img  src= {fruits[myfruits].fruitsimg}  height="200" weight="200" />
+                 </tr>
+                 <tr>
+                   <h3 className="fruit">{fruits[myfruits].name}</h3>
+                   <h6 className="description">{fruits[myfruits].description}</h6>
+                </tr>
+                <tr>
+                   <td> <b> MRP: </b>INR <span className="mrp"> {fruits[myfruits].mrp}</span> /kg </td>
+                   <td> <button className="cartbutton"><i className="fa fa-shopping-cart"></i>
+                   </button></td>
+                </tr>
+                <tr>
+                   <span className="fruit">Rating:</span>
+                   <span className="fa fa-star checked"></span>
+                   <span className="fa fa-star checked"></span>
+                   <span className="fa fa-star checked"></span>
+                   <span className="fa fa-star checked"></span>
+                   <span className="fa fa-star"></span>
+               </tr>
+             </table>
+          </div>
+        )
+    })
+    
+ }
+ render(){
+		return(
+			<div>
+        <h1>SHOPPING CART</h1>
+				{this.displayfruits()}
+			</div>
+		)
+	}
+}
+
+ReactDOM.render(<App/>, mountNode)
+
+
+CSS
+
+
+.cartbutton {
+float:right;
+background-color:#eee;
+}
+.fruit{
+color:		#8B008B;
+}
+
+.description{
+color:#0000FF;
+font-style: italic;
+}
+.mrp{
+font-size:20px;
+color:red;
+}
+.checked{
+color:orange;
+}
