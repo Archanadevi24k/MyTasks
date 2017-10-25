@@ -1,0 +1,57 @@
+class NameForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {input: '',
+                  input1:''
+    };
+}
+
+  handleInput = (event) => {
+    this.setState({input: event.target.value});
+  }
+  
+  handleInput1 = (event) =>{
+    this.setState({input1: event.target.value});
+  }
+
+  handleAdd = () => {
+    alert( +this.state.input + +this.state.input1);
+    
+  }
+  handleSub = () => {
+    alert( this.state.input - this.state.input1);
+    
+  }
+  handleMul = () => {
+    alert( this.state.input * this.state.input1);
+    
+  }
+  handleDiv = () => {
+    alert( this.state.input / this.state.input1);
+    
+  }
+  handlePercent = () => {
+    alert( this.state.input % this.state.input1);
+    
+  }
+
+
+  render() {
+    return (
+         <div>
+          <input type="number" value={this.state.input} onChange={this.handleInput} />
+          <input type="number" value={this.state.input1} onChange={this.handleInput1} /><br/><br/>
+          <input type="button" value="Add" onClick={this.handleAdd}/>
+          <input type="button" value="Sub" onClick={this.handleSub}/>
+          <input type="button" value="Mul" onClick={this.handleMul}/>
+          <input type="button" value="Div" onClick={this.handleDiv}/>
+          <input type="button" value="Percent" onClick={this.handlePercent}/>
+          
+          
+        </div>
+    );
+  }
+}
+
+
+ReactDOM.render(<NameForm />,mountNode);
