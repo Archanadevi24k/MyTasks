@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+</head>
+    <style>
+        h1{
+            font-family: cursive;
+            font-size: 30px;
+            color: #800080;
+        }
+        fieldset{
+            background-color: 	#FFFAFA;
+            
+        }
+        .low{
+            
+            color: red;
+        }
+        .high{
+            color: darkviolet;
+        }
+    </style>
+<body>
+    <h1>WELCOME TO SOUL-MATES...FIND YOUR SOULMATE</h1>
+    <form name="Registration" >
+        <fieldset>
+            <legend>Your Face</legend>
+             <table>
+                <tr>
+                  <td>Your Face</td> 
+                  <td>:</td>  
+                  <td><input type=file accept="image/*" value="Choose file"></td> 
+                </tr>
+                <tr>
+                  <td>Image Preview</td> 
+                  <td>:</td>  
+                  <td> <img src="1.jpg" alt="sampleimg"></td> 
+                </tr>
+             </table>
+        </fieldset><br>
+        
+        <fieldset>
+            <legend>Your General Details</legend>
+              <table>
+                <tr>
+                  <td>Name</td> 
+                  <td>:</td>  
+                  <td><input type="text" id="name" placeholder="Enter your name"  required   pattern="[A-Za-z]+" 
+                            onkeyup="FormsValidity()" ></td> 
+                </tr>
+                <tr>
+                  <td>Gender</td> 
+                  <td>:</td>  
+                  <td> <input type="radio" name="gender" id="male" value="Male">Male
+                       <input type="radio" name="gender" id="female" value="Female">Female<br></td> 
+                </tr>
+                <tr>
+                  <td>Age</td> 
+                  <td>:</td>  
+                  <td><input type="number" min="18" max="40" id="age"></td> 
+                </tr>
+                <tr>
+                  <td>Dob</td> 
+                  <td>:</td>  
+                  <td><input type="date" id="dob"></td> 
+                </tr>
+                <tr>
+                  <td>Favourite Color</td> 
+                  <td>:</td>  
+                  <td><input type="color" id="color"></td> 
+                </tr>
+                <tr>
+                  <td>Country</td> 
+                  <td>:</td>  
+                  <td><select>
+                   <option value="india">Select your Country</option>
+                   <option value="india">India</option>
+                   <option value="australia">Australia</option>
+                   <option value="china">China</option>
+                   <option value="india">Russia</option>
+                   <option value="us">U.S</option>
+                   <option value="Bangaladesh">Bangaladesh</option>
+                   </select></td> 
+                </tr>
+             </table>   
+        </fieldset><br>
+        
+        <fieldset>
+            <legend>Your Indicators</legend>
+              <table>
+                <tr>
+                  <td>Height</td> 
+                  <td>:</td>  
+                  <td><span class="low">Short</span>
+                      <input type="range" id="height">
+                    <span class="high">Tall</span><br></td> 
+                </tr>
+                <tr>
+                  <td>Salary</td> 
+                  <td>:</td>  
+                  <td> <span class="low">Poor</span>
+                       <input type="range" id="height">
+                       <span class="high">Rich</span></td> 
+                </tr>
+             </table>
+        </fieldset><br>
+        
+        <fieldset>
+            <legend>Your Contact Information</legend>
+              <table>
+                <tr>
+                  <td>Email</td> 
+                  <td>:</td>  
+                  <td><input type="email" id="email" required onkeyup="FormsValidity()" ></td> 
+                </tr>
+                <tr>
+                  <td>Mobile</td> 
+                  <td>:</td>  
+                  <td><input type="text" id="mobile" required pattern="[0-9]{10}" onkeyup="FormsValidity()" ></td> 
+                </tr>
+                <tr>
+                  <td>Address</td> 
+                  <td>:</td>  
+                  <td><textarea>Enter your address</textarea></td> 
+                </tr>
+                <tr>
+                  <td>Method to contact you</td> 
+                  <td>:</td>  
+                  <td><input type="checkbox" name="contact" value="WhatsApp">WhatsApp
+                      <input type="checkbox" name="contact" value="Email">Email
+                      <input type="checkbox" name="contact" value="Inapp Chat">In-App Chat</td> 
+                </tr>
+             </table>
+        </fieldset><br>
+        <input type="submit" id="submitbutton" value="submit">
+    </form>
+    
+       <script type="text/javascript">
+           
+                  var uName,uEmail,sbmtBtn;
+                  sbmtBtn = document.getElementById("submitbutton");
+                  sbmtBtn.disabled = true; 
+                  function FormsValidity(){
+                     var myforms = document.forms["Registration"];   
+                         if (myforms.checkValidity())
+                          {
+                            sbmtBtn.disabled = false;
+                          }
+                        else 
+                          {
+                         sbmtBtn.disabled = true;
+                          }
+                      store();
+            }
+           function store(){
+               uName=document.getElementById("name").value;
+               uEmail=document.getElementById("email").value;
+               localStorage.setItem("name",uName);
+               localStorage.setItem("email",uEmail);
+               localStorage.getItem("name");
+               localStorage.getItem("email");
+             
+               }
+             
+         
+         
+       </script>
+   
+    
+</body>
+</html>
