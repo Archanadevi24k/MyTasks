@@ -77,25 +77,3 @@ displayfruits(){
 ReactDOM.render(<App/>, mountNode)
 
 
-CSS
-
-
-.cartbutton {
-float:right;
-background-color:#eee;
-}
-.fruit{
-color:		#8B008B;
-}
-
-.description{
-color:#0000FF;
-font-style: italic;
-}
-.mrp{
-font-size:20px;
-color:red;
-}
-.checked{
-color:orange;
-}
