@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="utf-8">
+       <title>Fruit Basket</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+   
+    <body>
+        <h1>FRUIT BASKET</h1>
+        <img src="1.jpg" alt=""><br/>
+        
+        
+        <input type="text" id="add"><input type="button" value="AddFruit" onclick="addfruit()"><br><br>
+        
+        <button onclick="delfruit()">pop</button><br>
+        <div id="removefruit"></div><br>
+        
+        <button onclick="shiftfruit()">Shift</button><br>
+        <div id="shift"></div><br>
+        
+        <input type="text" id="unshift">
+        <button onclick="unshiftfruit()">UnShift</button><br><br>
+        
+        <input type="text" id="position">
+        <input type="text" id="numbers">
+        <button onclick="removesplicefruit()">RemoveSplice</button><br><br>
+        
+        <button onclick="addbunch()">AddBunch</button><br>
+        <div id="allfruit"></div><br>
+        
+        <input type="text" id="start">
+        <input type="text" id="end">
+        <button onclick="slicefruit()">SliceFruit</button><br>
+        <div id="slice"></div><br>
+        
+        <button onclick="reversefruit()">ReverseFruit</button><br><br>
+        
+        <button onclick="displayfruits()" ><h3>MyBasket</h3></button><br>
+        <span class="display"><div id="display"></div></span><br>
+        
+        <script src="script.js"></script>
+    </body>
+
+</html>
