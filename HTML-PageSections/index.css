@@ -1,0 +1,22 @@
+.socialmedia {
+    float:right;
+    font-size: 30px;
+    margin-right: 200px
+}
+.search{
+    float:right;
+    margin-right: -300px;
+    margin-top:6px;
+}
+.bloq{
+    font-family: cursive;
+    color:green;
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.content{
+    margin-left: 280px;
+    font-size: 25px;
+    color: red;
+}
